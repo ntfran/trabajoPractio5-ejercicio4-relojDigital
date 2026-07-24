@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+body {
+  font-family: "Oswald", sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.contenedor-reloj {
+  font-family: "Oswald", sans-serif;
+  background-color: #0d1117;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 420px;
+}
+
+.seccion-fecha {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background-color: #05080c;
+}
+
+.seccion-hora {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloque-principal {
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.separador {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.bloque-secundario {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 0.35rem; 
+  padding-bottom: 0.1rem;
+}
+
+#ampm {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+#segundos {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #ffffff;
+}
