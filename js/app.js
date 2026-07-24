@@ -22,6 +22,24 @@ const meses = [
   "Diciembre",
 ];
 
+let ultimoDiaRegistrado = null;
+
+function actualizarFecha() {
+  const fechaHora = new Date();
+  const diaSemana = fechaHora.getDay();
+
+  if (diaSemana === ultimoDiaRegistrado) return;
+
+  ultimoDiaRegistrado = diaSemana;
+
+  const fecha = String(fechaHora.getDate()).padStart(2, "0");
+  const mes = fechaHora.getMonth();
+  const anio = fechaHora.getFullYear();
+
+  document.getElementById("fecha").textContent =
+    `${diasSemana[diaSemana]} ${fecha} de ${meses[mes]} de ${anio}`;
+}
+
 function actualizarReloj() {
   const fechaHora = new Date();
   const horas24 = fechaHora.getHours();
@@ -34,19 +52,16 @@ function actualizarReloj() {
   const horasFormato = String(horas12).padStart(2, "0");
   const minutosFormato = String(minutos).padStart(2, "0");
   const segundosFormato = String(segundos).padStart(2, "0");
+
   document.getElementById("horas").textContent = horasFormato;
   document.getElementById("minutos").textContent = minutosFormato;
   document.getElementById("segundos").textContent = segundosFormato;
   document.getElementById("ampm").textContent = ampm;
-  const dia = fechaHora.getDay();
-  const fecha = String(fechaHora.getDate()).padStart(2, "0");
-  const mes = fechaHora.getMonth();
-  const anio = fechaHora.getFullYear();
-  document.getElementById("fecha").textContent =
-    `${diasSemana[dia]} ${fecha} de ${meses[mes]} de ${anio}`;
+
+  actualizarFecha();
 }
 
 actualizarReloj();
 setInterval(() => {
- actualizarReloj()
+  actualizarReloj();
 }, 1000);
